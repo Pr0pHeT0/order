@@ -47,6 +47,8 @@
           <van-card
             :key="material.name"
             :desc="material.desc"
+            :time="material.time"
+            :loc="material.loc"
             :title="material.name"
             :thumb="material.pic"
             @click="showMaterialdetail(index)"
@@ -113,15 +115,21 @@
           <van-col span="24">
             <img
               style="margin:20px"
-              width="300px"
-              height="280px"
+              width="250px"
+              height="200px"
               :src="materialDetail.pic"
             />
           </van-col>
         </van-row>
         <van-divider />
         <div style="height: 24vh; overflow-y: scroll">
-          {{ materialDetail.desc }}
+          食材介绍: {{ materialDetail.desc }}
+          <br /><br />
+          产地: {{ materialDetail.loc }}
+          <br /><br />
+          发货时间: {{ materialDetail.time }}
+          <br /><br />
+          到货时间: {{ materialDetail.time }}
         </div>
       </div>
     </van-popup>
@@ -207,27 +215,25 @@ export default {
       showPopup: false,
       showPopup_2: false,
       materialList: [
-        { name: "鸡肉", desc: "肉质细嫩，滋味鲜美", pic: "./ji.jpg" },
+        { 
+          name: "鸡肉", 
+          desc: "肉质细嫩，滋味鲜美", 
+          time: "2020年11月11日11点11分", 
+          loc: "无锡", 
+          pic: "./ji.jpg" },
         {
           name: "牛肉",
           desc: "蛋白质含量高，脂肪含量低，味道鲜美",
+          time: "2020年11月11日11点11分",
+          loc: "内蒙古",
           pic: "./niurou.jpg",
         },
-        { name: "西红柿", desc: "果实营养丰富，具特殊风味", pic: "./xi.jpg" },
-        { name: "鸡肉", desc: "肉质细嫩，滋味鲜美", pic: "./ji.jpg" },
-        {
-          name: "牛肉",
-          desc: "蛋白质含量高，脂肪含量低，味道鲜美",
-          pic: "./niurou.jpg",
-        },
-        { name: "西红柿", desc: "果实营养丰富，具特殊风味", pic: "./xi.jpg" },
-        { name: "鸡肉", desc: "肉质细嫩，滋味鲜美", pic: "./ji.jpg" },
-        {
-          name: "牛肉",
-          desc: "蛋白质含量高，脂肪含量低，味道鲜美",
-          pic: "./niurou.jpg",
-        },
-        { name: "西红柿", desc: "果实营养丰富，具特殊风味", pic: "./xi.jpg" },
+        { 
+          name: "西红柿", 
+          desc: "果实营养丰富，具特殊风味", 
+          time: "2020年11月11日11点11分", 
+          loc: "苏州",
+          pic: "./xi.jpg" },
       ],
       foodList: [
         {
